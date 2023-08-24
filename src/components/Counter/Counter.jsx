@@ -9,6 +9,7 @@ import {
 } from "../../redux/slices/counterSlice";
 import { fetchUsers } from "../../redux/asyncThunk/user.thunk";
 import Table from "./Table";
+import { Button } from "@mui/material";
 
 export function Counter() {
   const count = useSelector(selectCount);
@@ -23,19 +24,13 @@ export function Counter() {
     <>
       <Table />
       <div>
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          +
-        </button>
+		<Button variant="contained" onClick={() => dispatch(increment())}>
+			+
+		</Button>
         <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          -
-        </button>
+		<Button variant="outlined"  onClick={() => dispatch(decrement())}>
+			-
+		</Button>
       </div>
       <div>
         <input
